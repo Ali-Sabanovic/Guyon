@@ -1,0 +1,325 @@
+//////////////////////////////////
+////// VARIABLES
+
+// COLORS
+//COMPONENTS(C) - PRIMARY(PR) SECONDARY(SR) TERTIARY(TR)
+$cpr1: #7954b6;
+$cpr1-hover: #5b30a1;
+$cpr2: #8e5edd;
+$cpr2-hover: #ccaffb;
+
+$csr1: #ffffff;
+$csr2: #d7d7d7;
+
+$ctr1: #aaaaaa;
+
+//TEXT(T) - PRIMARY(PR) SECONDARY(SR) TERTIARY(TR)
+$tpr1: #565656;
+$tpr2: #9a9a9a;
+
+$tsr1: #ffffff;
+$tsr2: #d7d7d7;
+
+$ttr1: #7954b6;
+$ttr2: #df508f;
+
+
+//BACKGORUND(B) - PRIMARY(PR) SECONDARY(SR) TERTIARY(TR)
+$bpr1: #ffffff;
+$bpr2: #f2f2f6;
+
+$bsr1: #dd4287;
+$bsr2: #f1a63f;
+
+$btr1: #7954b6;
+$btr2: #c53899;
+
+// MEDIA QUERIES
+@mixin respond($breakpoint) {
+    @if $breakpoint == r7 {
+        @media (max-width: 630px) { @content };  
+    }
+
+    @if $breakpoint == r6 {
+        @media (max-width: 810px) { @content }; 
+    }
+
+    @if $breakpoint == r5 {
+        @media (max-width: 930px) { @content };  
+    }
+
+    @if $breakpoint == r4 {
+        @media (max-width: 1110px) { @content };  
+    }
+    
+    @if $breakpoint == r3 {
+        @media (max-width: 1350px) { @content };  
+    }
+
+    @if $breakpoint == r2 {
+        @media (max-width: 1560px) { @content };  
+    }
+
+    @if $breakpoint == r1 {
+        @media (max-width: 1680px) { @content };  
+    }
+}
+
+// FONTS
+$font1: 'Open Sans';
+$font2: 'Roboto';
+$font3: 'Myriad';
+   
+
+//////////////////////////////////
+////// MIXINS
+
+
+//////////////////////////////////
+////// UTILITIES
+
+
+//////////////////////////////////
+////// OVERALL
+html {
+    font-size: 10px;
+
+    @include respond(r3) {
+        font-size: 9px;    
+    }
+    
+    @include respond(r5) {
+        font-size: 8px;
+        
+    }
+    
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    font-family: $font3;
+}
+
+@font-face {
+    font-family: Myriad;
+    src: url(../font/Myriad.ttf);
+  }
+
+
+////////////////////////////////////////////////////////////
+////// TYPOGRAPHY
+
+//HEADINGS
+.h1-1 {
+    font-size: 5rem;
+    color: $tsr1;
+    font-weight: 400;
+}
+
+.h1-2,
+.h1-2--font2,
+.h1-2--white {
+    font-size: 4.8rem;
+    font-weight: 300;
+}
+
+.h1-2--white {
+    font-family: $font1;
+    color: $tsr1;
+}
+
+.h1-2 {
+    font-family: $font1;
+    color: $ttr1;
+}
+
+.h1-2--font2 {
+    font-family: $font2;
+    color: $ttr1;
+}
+
+.h1-3 {
+    font-family: $font1;
+    font-size: 4.8rem;
+    font-weight: 300;
+    color: $tsr1;
+}
+
+.h2-1,
+.h2-1--white {
+    font-family: $font1;
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+.h2-1 {
+    color: $ttr1;
+}
+
+.h2-1--white {
+    color: $tsr1;
+}
+
+.h2-2,
+.h2-2--white {
+    font-family: $font1;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.h2-2 {
+    color: $ttr1;
+}
+
+.h2-2--white {
+    color: $tsr1;
+}
+
+.h3-1 {
+    font-family: $font1;
+    font-size: 18px;
+    font-weight: 400;
+    color: $ttr1;
+}
+
+.h3-2 {
+    font-family: $font2;
+    font-size: 3rem;
+    font-weight: 400;
+    color: $ttr1;
+}
+
+.h3-3 {
+    font-family: $font2;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: $ttr1;
+}
+
+.h4-1  {
+    font-family: $font2;
+    font-size: 14px;
+    font-weight: 400;
+    color: $ttr1;
+}
+
+//PHARAGRAPHS
+.par-1 {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: $tsr1;
+    font-weight: 300;
+    line-height: 1.65;
+}
+
+.par-2,
+.par-2--grey,
+.par-2--white,
+.par-2--purple {
+    font-family: $font1;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.par-2 {
+    color: $tpr1;
+}
+
+.par-2--grey {
+    color: $tsr2;
+}
+
+.par-2--white {
+    color: $tsr1;
+}
+
+.par-2--purple {
+    color: $ttr1;
+}
+
+.par-3,
+.par-3--grey {
+    font-family: $font1;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.par-3 {
+    color: $tpr1;
+}
+
+.par-3--grey {
+    color: $tsr2;
+}
+
+.par-4,
+.par-4--light {
+    font-family: $font2;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.par-4 {
+    color: $tpr1;
+}
+
+.par-4--light {
+    color: $tpr2;
+}
+
+.par-5 {
+    font-family: $font2;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: $tpr2;
+}
+  
+.par-6 {
+    font-family: $font2;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: $tpr1;
+}
+
+.par-7 {
+    font-family: $font2;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: $tpr1;
+}
+
+//////////////////////////////////
+////// ANIMATIONS
+
+@keyframes wave {
+
+    0% {
+        background-position: 0;
+    }
+
+    100% {
+        background-position: 1360px;
+    }
+}
+
+@keyframes wave-reverse {
+
+    0% {
+        background-position: 1360px;
+    }
+
+    100% {
+        background-position: 0;
+    }
+}

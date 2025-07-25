@@ -1,0 +1,291 @@
+
+// GRID
+.container-fluid {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    width: 93.66%;
+    margin: 0 auto;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 0 0 100%;
+}
+
+.col-2 {
+    flex: 0 0 50%;
+}
+
+.col-3 {
+    flex: 0 0 33.333%;
+}
+
+.col-sr1 {
+    flex: 0 0 56.25%;
+
+    @include respond(r4) {
+        flex: 0 0 100%;
+    }
+}
+
+.col-sr2 {
+    flex: 0 0 43.75%;   
+    
+    @include respond(r4) {
+        flex: 0 0 100%;
+    }
+}
+
+// NAVIGATION
+
+.navigation {
+    justify-content: space-between;
+    padding: 4rem 5rem;
+    position: relative;
+    z-index: 1000;
+
+    @include respond(r7) {
+        padding: 5rem 3rem;
+    }
+
+    .logo {
+        align-self: center;
+    }
+    
+    .navi {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        align-items: center;
+
+        @include respond(r3) {
+            display: none;
+        }
+
+        .active-nav {
+            border: 2px solid $csr1;
+        }
+
+        li {
+            padding: 6px 18px;
+            border: 2px solid transparent;
+            border-radius: 45px;
+            transition: all .3s;
+            margin-left: 12px;
+
+            &:hover {
+                background-color: #fff;
+            }
+
+            &:hover a {
+                color: $ttr1;
+            }
+
+            a {
+                font-family: $font1;
+                font-size: 1.4rem;
+                font-weight: 600;
+                text-decoration: none;
+                color: $tsr1;
+                transition: all .3s;
+            }
+        }
+    }
+}
+
+//responsive-nav
+.menu {
+    display: none;
+    position: relative;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    @include respond(r3) {
+        display: block;
+    }
+}
+.nav-tgl {
+  display: inline-block;
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  right: 20px;
+  top: 20px;
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: #fff;
+	box-shadow: 0px 4px 24px rgba(#000, 0.24);
+  line-height: 0.6;
+  text-align: center;
+  z-index: 9999;
+
+  @include respond(r7) {
+    width: 54px;
+    height: 54px;
+}
+	
+	// making the dividers
+	> span {
+		// the second divider
+		display: inline-block;
+		position: relative;
+		height: 2px;
+		width: 34px;
+		border-radius: 1px;
+		background: #293335;
+		vertical-align: middle;
+		
+		// the first & the third dividers
+		&:before, &:after {
+		  display: inline-block;
+			position: absolute;
+			content: "";
+			height: 2px;
+			border-radius: 1px;
+			background: #293335;
+			// for the hover state
+			transition: all 200ms;
+		}
+		&:before {
+		  top: -11px;
+			left: 3px;
+			width: 28px;
+		}
+		&:after {
+		  top: 11px;
+			left: 6px;
+			width: 22px;
+		}
+	}
+	
+	// ofcorse we should find a replacement for the focus state but it's not our topic
+	&:focus {outline: none}
+	
+	&:hover > span:after, &:hover > span:before {
+		width: 34px;
+		left: 0;
+	}
+}
+
+// for the nav background (styling the nav itself is not our topic)
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0, .9);
+  transition: all 500ms ease-in-out;
+  z-index: 999;
+
+    ul {
+        list-style: none;
+
+        li {
+            padding-bottom: 2.4rem;
+
+            @include respond(r7) {
+                padding-bottom: 2rem;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 3rem;
+                letter-spacing: 6px;
+                font-family: $font1;
+                font-weight: 700;
+                border-bottom: 2px solid transparent;
+                color: $ttr2;
+
+                @include respond(r7) {
+                    font-size: 2.4rem;
+                }
+            }
+
+            .active {
+                color: $cpr2;
+            }
+        }
+    }
+	
+	// that's all the pen about
+  clip-path: circle(30px at calc(100% - 65px) 65px);
+	// for AT
+  visibility: hidden;
+}
+
+// when it gits activated
+.menu.active {
+	.nav {
+        visibility: visible;
+        
+
+		// that's all the pen about
+		clip-path: circle(100%);
+	}
+	
+	.nav-tgl > span {
+		height: 0;
+		&:after, &:before {
+		  top: 0px;
+			left: 0;
+			width: 34px;
+		}
+		&:after {
+		  transform: rotate(-45deg);
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
